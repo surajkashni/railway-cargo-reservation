@@ -1,0 +1,4 @@
+.slide img,.card-img{
+    height: 460px;
+    object-fit: cover;
+}
