@@ -22,7 +22,7 @@ Two type of users:
 * Got a list of all Trains(with route).
 * Got a list of all bookings.
 
-### Subscriber:
+### User:
 
 * Login or register using email and password
 * Login or register using Google Account
