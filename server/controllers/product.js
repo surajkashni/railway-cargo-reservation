@@ -19,10 +19,7 @@ exports.create = async (req, res) => {
 
 exports.listall = async (req, res) => {
   let products = await Product.find({})
-  .limit(parseInt(req.params.count))
-  .populate("category")
-  .populate("subs")
-  .sort([["craetedAt","desc"]])
+  .sort([["createdAt","desc"]])
   .exec();
   res.json(products);
 };
@@ -40,24 +37,42 @@ catch(err){
 
 }
 
-exports.read=async(req,res)=>{
- const rails= await Product.find({$and:[{source:req.body.source},{destination:req.body.destination}]}).exec();
-// const rails=await Product.find({source:req.body.source}).exec();
- res.json(rails);
+
+
+exports.trainsBySD=async(req,res)=>{
+  try{
+    const trains= await Product.find({$and:[{source:req.headers.source},{destination:req.headers.destination}]}).exec();
+    res.json(trains);
+
+  }catch(err){
+    console.log("gettrains",err);
+    res.status(400).send("get trains failed");
+  }
 }
 exports.confirm=async(req,res)=>{
- const rails=await Product.findOneAndUpdate({slug:req.params.slug},{$inc:{sold:(req.body.quantity)},$inc:{quantity:-(req.body.quantity)}},{new:true}).exec();
- await rails.updateOne({$inc:{sold:req.body.quantity}},{new:true}).exec();
+ const rails=await Product.findOneAndUpdate({id:req.params.slug},
+  {$inc:{sold:(req.body.quantity),quantity:-(req.body.quantity)},},
+  {new:true}).exec();
 
 res.json(rails);
 }
- exports.readone=async(req,res)=>{
-  const rails=await Product.find({slug:req.params.slug}).exec();
+ exports.readoneid=async(req,res)=>{
+  const rails=await Product.find({id:req.params.slug}).exec();
    res.json(rails);
   }
+  exports.readonename=async(req,res)=>{
+    const rails=await Product.find({title:req.params.slug}).exec();
+     res.json(rails);
+    }
+    exports.readoneday=async(req,res)=>{
+      const rails=await Product.find({day1:req.params.slug}).exec();
+       res.json(rails);
+      }
   exports.cancel=async(req,res)=>{
-    const rails=await Product.findOneAndUpdate({slug:req.params.slug},{$inc:{quantity:(req.body.quantity)}},{new:true}).exec();
-    await rails.updateOne({$inc:{sold:-(req.body.quantity)}},{new:true}).exec();
+    const rails=await Product.findOneAndUpdate({id:req.params.slug},
+      {$inc:{sold:-(req.body.quantity),quantity:(req.body.quantity)}},
+    {new:true}).exec();
+    //  rails.updateOne({$inc:{sold:-(req.body.quantity)}},{new:true}).exec();
    
    res.json(rails);
    

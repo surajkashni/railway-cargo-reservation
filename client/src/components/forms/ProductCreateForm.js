@@ -20,7 +20,9 @@ const ProductCreateForm = ({
     categories,
     source,
     destination,
-    day,
+    day1,
+    day2,
+    id,
     category,
     subs,
     shipping,
@@ -35,12 +37,22 @@ const ProductCreateForm = ({
   return (
     <form onSubmit={handleSubmit}>
       <div className="form-group">
-        <label>Title</label>
+        <label>Name of train</label>
         <input
           type="text"
           name="title"
           className="form-control"
           value={title}
+          onChange={handleChange}
+        />
+      </div>
+      <div className="form-group">
+        <label>TrainId</label>
+        <input
+          type="text"
+          name="id"
+          className="form-control"
+          value={id}
           onChange={handleChange}
         />
       </div>
@@ -57,7 +69,7 @@ const ProductCreateForm = ({
       </div> */}
 
       <div className="form-group">
-        <label>Cost</label>
+        <label>Cost per unit</label>
         <input
           type="number"
           name="price"
@@ -81,7 +93,7 @@ const ProductCreateForm = ({
       </div> */}
 
       <div className="form-group">
-        <label>Quantity</label>
+        <label>Slots</label>
         <input
           type="number"
           name="quantity"
@@ -91,7 +103,7 @@ const ProductCreateForm = ({
         />
       </div>
       <div className="form-group">
-        <label>Type</label>
+        <label>Type of train</label>
         <input
           type="text"
           name="category"
@@ -147,12 +159,23 @@ const ProductCreateForm = ({
         />
       </div>
       <div className="form-group">
-        <label>Day</label>
+        <label>Day of departure</label>
         <input
           type="text"
-          name="day"
+          name="day1"
           className="form-control"
-          value={day}
+          value={day1}
+          onChange={handleChange}
+        />
+      </div>
+
+      <div className="form-group">
+        <label>Day of Arrival at Destination</label>
+        <input
+          type="text"
+          name="day2"
+          className="form-control"
+          value={day2}
           onChange={handleChange}
         />
       </div>

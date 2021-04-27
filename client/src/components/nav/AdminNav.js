@@ -2,25 +2,30 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const AdminNav = () => (
-  <nav   >
+  <nav style={{alignContent:"center"}}  >
     <ul className=" navbar-nav flex-column">
-      <li className="nav-item">
-        <Link to="/admin/dashboard" className="nav-link" style={{ textDecoration: 'none' }}>
+      <button className=" btn-lg btn"><li className="nav-item">
+        <Link to="/admin/dashboard"  >
           Dashboard
         </Link>
-      </li>
-
+      </li></button>
+      <button className=" btn-lg btn ">
       <li className="nav-item">
-        <Link to="/admin/product" className="nav-link"  style={{ textDecoration: 'none' }}>
+        <Link to="/admin/product" >  
           Train
         </Link>
       </li>
-
+      </button>
+      <button className=" btn-lg btn">
       <li className="nav-item">
-        <Link to="/admin/products" className="nav-link"  style={{ textDecoration: 'none' }}>
+        <Link to="/admin/products" >
         Trains
         </Link>
       </li>
+      </button>
+     
+
+      
 
       {/* <li className="nav-item">
         <Link to="/admin/category" className="nav-link"  style={{ textDecoration: 'none' }}>
