@@ -1,14 +1,13 @@
-# This is Railway Cargo reservation Project. 
+# Railway Cargo reservation Project. 
 
 
 
 ## This Project is based on **MERN** stack.
 
-FrontEnd:**REACT**
+## Introduction
 
-BackEnd:**NodeJs**
 
-DataBase:**MongoDB**
+This is the report of the “Railway Cargo Reservation” web application, in which front end (client side) is developed using **REACT JS** and back end (server side) is developed using **NodeJs**. This web application use **MongoDB** as the database, which is a cross-platform document-oriented database. 
 
 
 Two type of users:
