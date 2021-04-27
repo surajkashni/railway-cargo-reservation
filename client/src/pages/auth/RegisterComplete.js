@@ -56,6 +56,7 @@ const RegisterComplete = ({ history }) => {
 
         createOrUpdateUser(idTokenResult.token,firstName,lastName,mobile,pin,po,teh,dist,state,id)
           .then((res) => {
+            console.log('suraj',res);
             dispatch({
               type: "LOGGED_IN_USER",
               payload: {

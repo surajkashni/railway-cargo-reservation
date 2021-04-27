@@ -27,6 +27,8 @@ import { currentUser } from "./functions/auth";
 import AllProduct from "./pages/admin/product/AllProduct";
 import ProductUpdate from "./pages/admin/product/ProductUpdate";
 import Product from "./components/home/Product";
+import Cart from './pages/user/Cart';
+import Checkout from './pages/user/Checkout';
 // import CategoryHome from "./pages/category/CategoryHome";
 
 const App = () => {
@@ -84,8 +86,11 @@ const App = () => {
         <AdminRoute exact path="/admin/product" component={ProductCreate} />
         <AdminRoute exact path="/admin/products" component={AllProduct} />
         <AdminRoute exact path="/admin/product/:slug" component={ProductUpdate} />
-        <Route exact path="/product/:slug" component={Product} />
+        <Route exact path="/product/" component={Product} />
         {/* <Route exact path="/category/:slug" component={CategoryHome} /> */}
+        <Route exact path="/cart" component={Cart} />
+        <UserRoute exact path="/user/checkout" component={Checkout} />
+
       </Switch>
     </>
   );
