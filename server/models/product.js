@@ -10,11 +10,17 @@ const productSchema = new mongoose.Schema(
       maxlength: 32,
       text: true,
     },
+    id: {
+      type:String,
+      required:true,
+      unique:true,
+      index:true
+      
+    },
     slug: {
-      type: String,
-      unique: true,
+      type: String,      
       lowercase: true,
-      index: true,
+     
     },
     // description: {
     //   type: String,
@@ -42,7 +48,9 @@ const productSchema = new mongoose.Schema(
     },
     source:String ,
     destination:String,
-    day:String,
+    day1:String,
+    day2:String,
+    
       
     // images: {
     //   type: Array,

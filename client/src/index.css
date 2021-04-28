@@ -2,3 +2,9 @@
     height: 460px;
     object-fit: cover;
 }
+
+.checkout{
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+}

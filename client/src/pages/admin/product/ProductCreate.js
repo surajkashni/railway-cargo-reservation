@@ -7,14 +7,16 @@ import ProductCreateForm from "../../../components/forms/ProductCreateForm";
 // import { getCategories, getCategorySubs } from "../../../functions/category";
 import {LoadingOutlined} from "@ant-design/icons";
 const initialState = {
-  title: "Macbook Pro",
-  price: "45000",
+  title: "",
+  price: "",
   categories: "",
-  quantity: "50",
+  quantity: "",
     
   source:"",
   destination:"",
-  day:"",
+  day1:"",
+  day2:"",
+  id:""
 };
 
 const ProductCreate = () => {
@@ -72,7 +74,7 @@ const ProductCreate = () => {
         </div>
 
         <div className="col-md-10 ">
-         {loading?(<LoadingOutlined className="text-danger h1 "/>):( <h4 >Product create</h4>)}
+         {loading?(<LoadingOutlined className="text-danger h1 "/>):( <h4 >Train</h4>)}
           <hr />
 
           {/* {JSON.stringify(values.images)} */}

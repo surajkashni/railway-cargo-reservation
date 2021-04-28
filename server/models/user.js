@@ -3,15 +3,7 @@ const { ObjectId } = mongoose.Schema;
 
 const userSchema = new mongoose.Schema(
   {
-    firstname: String,
-    lastname:String,
-    mobile:String,
-    pin:String,
-    dist:String,
-    po:String,
-    teh:String,
-    state:String,
-    id:String,
+    name: String,
     email: {
       type: String,
       required: true,
@@ -26,7 +18,12 @@ const userSchema = new mongoose.Schema(
       default: [],
     },
     
-    //   wishlist: [{ type: ObjectId, ref: "Product" }],
+      //name:String,
+      mobile:String,
+      pin:String,
+      address:String
+    ,
+   // wishlist: [{ type: ObjectId, ref: "Product" }],
   },
   { timestamps: true }
 );
