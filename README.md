@@ -1,5 +1,13 @@
 # Railway Cargo reservation Project. 
 
+
+## Details of Group Members
+    Name -  Sandeep Kumar Maurya (185029),
+            Suraj Kumar (185030)
+    Course: CSD-327 Software Engineering LAB
+    Date -  May 6th, 2021
+    Submitted to: Dr. Dharmendra Prasad Mahto
+
 ## Introduction
 
 
